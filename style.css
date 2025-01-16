@@ -1,22 +1,34 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(50, 50, 50);
+    background-color: var(--white);
 }
 *{
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
 }
+:root{
+    --black:rgb(50,50,50);
+    --orange:rgb(253, 133, 5);
+    --white:beige;
+}
 /* Navigation part */
+#home{
+    position: relative;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
 #navbar{
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: 99vw;
-height: 7vh;
-background-color: rgba(50, 50, 50);
-position:sticky;
-top: 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    align-items: center;
+    height: 60px;
+    z-index: 999999;
+    position:fixed;
 }
 
 #logo{
@@ -27,7 +39,7 @@ top: 0;
 }
 #logo-text{
     font-size: 3em;
-    color: rgba(155, 137, 5, 0.809);
+    color: var(--orange);
 }
 
 #logo img{
@@ -36,17 +48,19 @@ top: 0;
     margin-left: 40px;
     border-radius: 50%;
 }
-
+.nav-links{
+    padding-right: 20px;
+}
 .nav-links a{
     text-decoration: none;
-    color: beige;
-    padding: 10px 20px;
+    color: var(--black);
+    padding: 8px 16px;
     font-size: 1em;
     text-transform: uppercase;
 }
 .nav-links a:hover{
-    background-color: beige;
-    color: rgb(50, 50, 50);
+    background-color: var(--black);
+    color: var(--white);
     border: none;
     border-top-left-radius: 60px;
     border-bottom-right-radius: 60px;
@@ -54,55 +68,56 @@ top: 0;
 
 /* Navigation End */
 
-#home{
+#home-data{
+    position: relative;
     display: flex;
-    height: 100vh;
-    width: 99vw;
     gap: 5vw;
-    justify-content: space-evenly;
-    flex-direction: row;
+    padding:10vh 0vh;
+    top: 60px;
     background-color: beige;
-    align-items: flex-start;
-    border-top-left-radius: 300px;
-    border-bottom-right-radius: 300px;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #picture{
     position: relative;
     display: flex;
+    height: 70vh;
+    width: 40vw;
     justify-content: center;
     align-items: flex-end;
-    height: 90vh;
-    width: 40vw;
+    border: 2px solid var(--white);
+    box-shadow: 0px 0px 5px 2px var(--black);
+    border-radius: 10px;
+
 }
 #picture img{
     position: relative;
-    margin-top: 150px;
-    margin-left: 50px;
-    height:90%;
-    width: auto;
+    height: 80vh;
+    
 }
 #home-info{
-    display: flex;
-    flex-direction: column;
     position: relative;
-    justify-content: center;
-    align-items: flex-start;
-    height: 90vh;
-    width: 60vw;
+    display: flex;
+    gap: 10px;
+    height: 70vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    
 }
-#hello{
-    font-size: 40px;
-    color: rgb(50, 50, 50);
-    font-weight: 500;
+#wlc-msg{
+    padding-top: 10vh;
+    font-size: 1em;
+    color: var(--black);
+    font-weight: 400;
 }
 #name{
-
-    font-size: 50px;
+    font-size: 3em;
     color: rgb(50, 50, 50);
 }
 #name span{
-    font-size: 70px;
+    font-size: 50px;
     color: rgb(194, 8, 8);
     font-weight: 600;
 }
@@ -113,7 +128,7 @@ top: 0;
     color: rgb(50, 50, 50);
 }
 #buttons button{
-    margin-top: 30px;
+    position: relative;
     display: flex;
     align-items: center;
     padding: 13px 26px;
@@ -127,82 +142,100 @@ top: 0;
     cursor: pointer;
 }
 
+#social{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6vh;
+}
+#social-intro{
+    font-size: 0.8em;
+    font-weight: 500;
+}
+#social-intro hr{
+    position: relative;
+    width: 80%;
+    border: 1px solid var(--black);
+    margin-top: 2px;
+}
+#social-medias{
+    position: relative;
+    display: flex;
+    gap: 3px;
+}
+.social-media{
+    position: relative;
+    border: 1px solid red;
+    height: 40px;
+    width: 40px;
+}
 /* Home page css end */
 
 #about{
     display: flex;
     height: 90vh;
     width: 99vw;
-    background-color: beige;
-    border-top-left-radius: 300px;
-    border-bottom-right-radius: 300px;
     justify-content: center;
     align-items: center;
 }
 #skill{
     display: flex;
-    height: 80vh;
-    width: 99vw;
-    background-color: beige;
-    border-top-left-radius: 300px;
-    border-bottom-right-radius: 300px;
     justify-content: center;
     align-items: center;
 }
 
 #project{
     display: flex;
-    height: 80vh;
-    width: 99vw;
-    background-color: beige;
-    border-top-left-radius: 300px;
-    border-bottom-right-radius: 300px;
     justify-content: center;
     align-items: center;
 }
 #service{
     display: flex;
-    height: 80vh;
-    width: 99vw;
-    background-color: beige;
-    border-top-left-radius: 300px;
-    border-bottom-right-radius: 300px;
     justify-content: center;
     align-items: center;
 }
 
 #contact{
+    position: relative;
     display: flex;
-    height: 80vh;
-    width: 99vw;
+    height: 100%;
+    padding: 20vh 15vw;
     background-color: beige;
-    border-top-left-radius: 300px;
-    border-bottom-right-radius: 300px;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
     border: none;
     
 }
 #left-contact{
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: start;
 }
+#left-contact #title{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
 
 #left-contact #title h2{
+    position: relative;
     font-weight: 600;
     font-size: 40px;
-    color: rgb(50, 50, 50);
+    color: rgb(253, 133, 5);
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
 #left-contact #title hr{
+    position: relative;
     border: none;
     border-radius: 10px;
-    width: 300px;
-    height: 3px;
-    background-color: rgb(50, 50, 50);
+    width: 200px;
+    height: 5px;
+    background-color: rgb(253, 133, 5);
 }
 .contact-form{
     border: none;
@@ -219,7 +252,7 @@ top: 0;
     color: rgba(50, 50, 50, 0.69);
 }
 .contact-form:focus{
-    border: 2px solid rgba(155, 137, 5, 0.809);
+    border: 2px solid var(--black);
 }
 #left-contact textarea{
     padding-top: 20px;
@@ -245,10 +278,10 @@ top: 0;
 }
 #right-contact{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+
 }
 #contact-photo img{
     width: 200px;
@@ -261,6 +294,8 @@ top: 0;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
 }
 .contact-email,.contact-phone{
     display: flex;
@@ -273,17 +308,138 @@ top: 0;
     padding-left: 20px;
     font-size: 20px;
     font-weight: 500;
-    color: rgb(50, 50, 50);
+    color: var(--black);
 }
 .fa-phone, .fa-envelope{
-    color: rgba(155, 137, 5, 0.809);
+    color: var(--orange);
+}
+
+@media screen and (max-width :700px) {
+    #contact{
+        position: relative;
+        display: flex;
+        height: 100%;
+        padding: 20vh 15vw;
+        background-color: beige;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        border: none;
+        
+    }
+    #left-contact{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: start;
+    }
+    #left-contact #title{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #left-contact #title h2{
+        position: relative;
+        font-weight: 600;
+        font-size: 25px;
+        color: rgb(253, 133, 5);
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    #left-contact #title hr{
+        position: relative;
+        border: none;
+        border-radius: 10px;
+        width: 150px;
+        height: 5px;
+        background-color: rgb(253, 133, 5);
+    }
+    .contact-form{
+        border: none;
+        outline: none;
+        display: flex;
+        padding-left: 25px;
+        flex-direction: column;
+        height: 40px;
+        width: 400px;
+        border: none;
+        border-radius: 50px;
+    }
+    .contact-form::placeholder{
+        color: rgba(50, 50, 50, 0.69);
+    }
+    .contact-form:focus{
+        border: 2px solid var(--black);
+    }
+    #left-contact textarea{
+        padding-top: 20px;
+        height: 60px;
+        border-radius: 20px;
+    }
+    #left-contact button{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 26px;
+        color: rgb(50, 50, 50);
+        font-size: 20px;
+        font-weight: 600;
+        border: none;
+        border-radius: 50px;
+        background: linear-gradient(270deg, rgb(50,50,50), beige);
+        cursor: pointer;
+    }
+    #left-contact button img{
+        height: 15px;
+        width: 15px;
+    }
+    #right-contact{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+    #contact-photo img{
+        width: 200px;
+        height: 200px;
+    }
+    #contact-photo{
+        margin-top: 15px;
+    }
+    #contact-info{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0px;
+    }
+    .contact-email,.contact-phone{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: -20px;
+    }
+    .contact-email p,.contact-phone p{
+        padding-left: 20px;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--black);
+    }
+    .fa-phone, .fa-envelope{
+        color: var(--orange);
+    }
 }
 #web-footer{
     display: flex;
     justify-content: center;
     background-color: black;
     height: 10vh;
-    width: 99vw;
+    width: 100%;
     align-items: center;
 }
 #web-footer p{
