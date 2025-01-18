@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: var(--white);
-    width: 99vw;
+    width: 100vw;
     overflow-x: hidden;
 }
 *{
@@ -15,25 +15,36 @@ body{
     --orange:rgb(253, 133, 5);
     --white:beige;
 }
+#home{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    top:0px;
+    left: 0px;
+}
 /* Navigation part */
 
-#navbar{
-    position: relative;
+nav{
+    position:fixed;
     display: flex;
     justify-content: space-between;
     width: 100vw;
     align-items: center;
-    height: 60px;
+    height: 65px;
     z-index: 999999;
-    position:sticky;
-    top:0;
+    transition: 0.6s;
 }
 
 #logo{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 7px;
+    transition: 0.6s;
+    cursor: pointer;
+    text-decoration: none;
 }
 #logo-text{
     font-size: 3em;
@@ -50,7 +61,7 @@ body{
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding-right: 20px;
 }
 .nav-links a{
@@ -59,9 +70,10 @@ body{
     padding: 8px 16px;
     font-size: 1em;
     text-transform:uppercase;
+    transition: 0.6s;
 }
 .nav-links a:hover{
-    background-color: var(--black);
+    background-color:var(--black);
     color: var(--white);
     border: none;
     border-top-left-radius: 60px;
@@ -75,20 +87,30 @@ body{
     color: var(--black);
     font-size: 1.2em;
 }
+
+nav.sticky{
+    background-color:var(--black);
+}
+nav.sticky .nav-links a{
+    color: var(--white);
+}
+nav.sticky .nav-links a:hover{
+    background-color: var(--white);
+    color: var(--black);
+}
+
 /* Navigation End */
 
-#home{
+#home-data{
     position: relative;
     display: flex;
     gap: 5vw;
-    padding:5vh 0vh;
-    top: 60px;
-    background-color: beige;
+    padding: 20vh 0;
     justify-content: space-evenly;
     align-items: center;
 }
 
-#picture{
+#picture-container{
     position: relative;
     display: flex;
     height: 70vh;
@@ -96,14 +118,13 @@ body{
     justify-content: center;
     align-items: flex-end;
     border: none;
-    box-shadow: 0px 0px 5px 2px var(--black);
+    box-shadow: 0px 0px 10px 5px var(--black);
     border-radius: 10px;
 
 }
-#picture img{
+#picture-container img{
     position: relative;
-    height: 80vh;
-    
+    height: 80vh;    
 }
 #home-info{
     position: relative;
@@ -114,7 +135,7 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    
+    transition: 0.6s;    
 }
 #wlc-msg{
     padding-top: 10vh;
@@ -153,21 +174,23 @@ body{
 }
 
 #social{
+    margin-top: 8vh;
     position:relative;
-    padding: 5vh;
     display: flex;
     flex-direction: column;
-    width: 55vw;
     justify-content: flex-start;
     align-items: flex-start;
+    transition: 0.6s;       
 }
 #social-intro{
     font-size: 1em;
     font-weight: 600;
     color: var(--black);
+    
 }
 #social #hr{
     margin-top: -18px;
+    border: none;
     width: 80px;
     border: 1px solid var(--black);
     border-radius: 8px;
@@ -175,18 +198,26 @@ body{
 #social-medias{
     position: relative;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     margin-top: 15px;
     gap: 15px;
+    
 }
-
 .icons{
-    height: 0px;
-    font-size: 2.2em;
-    cursor: pointer;
+    font-size: 2em;
+
 }
 
-a{
+#social-medias a{
 
+    padding:2px;
+    cursor: pointer;
+    width: 35px;
+}
+#social-medias a:hover{
+    box-shadow: 0px 0px 10px 3px red;
+    border-radius: 8px;
 }
 
 /* Home page css end */
@@ -216,43 +247,49 @@ a{
 #contact{
     position: relative;
     display: flex;
-    height: 100%;
-    padding: 20vh 15vw;
+    height: 70vh;
+    padding: 20vh 0vw;
     background-color: beige;
-    justify-content: space-between;
-    align-items: flex-start;
-    border: none;
+    justify-content: space-evenly;
+    align-items: center;
     
 }
+
 #left-contact{
     position: relative;
     display: flex;
     flex-direction: column;
+    padding: 3vh 4vw;
     gap: 15px;
-    align-items: start;
+    align-items: flex-start;
+    box-shadow: 0px 0px 10px 5px var(--black);
+    border-radius: 10px;
 }
+
 #left-contact #title{
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 #left-contact #title h2{
     position: relative;
     font-weight: 600;
     font-size: 40px;
-    color: rgb(253, 133, 5);
+    color: var(--orange);
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: -8px;
 }
 
 #left-contact #title hr{
     position: relative;
     border: none;
     border-radius: 10px;
-    width: 200px;
-    height: 5px;
-    background-color: rgb(253, 133, 5);
+    width: 150px;
+    height: 3px;
+    background-color: var(--orange);
 }
 .contact-form{
     border: none;
