@@ -295,17 +295,14 @@ nav.sticky #hamburger .bar{
     width: 35vw;
 }
 #skill{
-    display: flex;
-    padding: 25vh 0 5vh 0;
+
 }
 
 #project{
-    display: flex;
-    padding: 25vh 0 5vh 0;
+    
 }
 #service{
-    display: flex;
-    padding: 25vh 0 5vh 0;
+    
 }
 #contact{
     position: relative;
